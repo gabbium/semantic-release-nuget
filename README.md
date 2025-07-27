@@ -1,4 +1,4 @@
-# SemanticRelease NuGet
+# semantic release nuget
 
 A [semantic-release](https://semantic-release.gitbook.io) plugin to build and publish NuGet packages automatically for .NET projects.
 
