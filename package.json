@@ -1,6 +1,6 @@
 {
   "name": "@gabbium/semantic-release-nuget",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A semantic-release plugin to build and publish NuGet packages automatically",
   "type": "module",
   "main": "index.js",
