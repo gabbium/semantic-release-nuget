@@ -1,0 +1,46 @@
+{
+  "name": "@gabbium/semantic-release-nuget",
+  "version": "1.0.0",
+  "description": "A semantic-release plugin to build and publish NuGet packages automatically",
+  "type": "module",
+  "main": "index.js",
+  "exports": {
+    ".": "./index.js"
+  },
+  "keywords": [
+    "semantic-release",
+    "plugin",
+    "nuget",
+    "dotnet"
+  ],
+  "license": "MIT",
+  "author": {
+    "name": "Gabriel Abreu",
+    "url": "https://github.com/gabbium"
+  },
+  "homepage": "https://github.com/gabbium/semantic-release-nuget#readme",
+  "bugs": {
+    "url": "https://github.com/gabbium/semantic-release-nuget/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gabbium/semantic-release-nuget.git"
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/",
+    "tag": "latest"
+  },
+  "dependencies": {
+    "execa": "^9.6.0"
+  },
+  "peerDependencies": {
+    "semantic-release": "^24.2.7"
+  },
+  "devDependencies": {
+    "@semantic-release/changelog": "^6.0.3",
+    "@semantic-release/git": "^10.0.1",
+    "@semantic-release/github": "^11.0.3",
+    "@semantic-release/npm": "^12.0.2",
+    "semantic-release": "^24.2.7"
+  }
+}
