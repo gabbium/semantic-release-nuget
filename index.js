@@ -37,7 +37,7 @@ export async function publish(pluginConfig, context) {
       "push",
       "./nupkgs/*.nupkg",
       "-k",
-      process.env.NUGET_TOKEN,
+      process.env.NUGET_API_KEY,
       "-s",
       "https://api.nuget.org/v3/index.json",
     ],

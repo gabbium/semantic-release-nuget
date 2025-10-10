@@ -1,33 +1,38 @@
 name: Release
 
 on:
+  workflow_dispatch:
   push:
-    branches: ["main"]
+    branches: [main]
+
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency:
+  group: release-${{ github.ref }}
+  cancel-in-progress: false
 
 jobs:
   release:
+    name: Semantic Release
     runs-on: ubuntu-latest
 
-    permissions:
-      contents: write
-      issues: write
-      pull-requests: write
-
     steps:
-      - name: Checkout code
+      - name: 📦 Checkout | Repository
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
 
-      - name: Setup Node.js
+      - name: ⚙️ Setup | Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 23.x
 
-      - name: Install dependencies
+      - name: 📥 Install | Dependencies
         run: npm install
 
-      - name: Run Release
+      - name: 🏷️ Run semantic-release
         run: npx semantic-release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

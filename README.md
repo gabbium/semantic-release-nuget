@@ -17,7 +17,7 @@ All automatically in the `publish` step of semantic-release.
 ## 📦 Installation
 
 ```bash
-npm install --save-dev semantic-release-nuget
+npm install --save-dev @gabbium/semantic-release-nuget
 ```
 
 ---
@@ -30,12 +30,12 @@ In your `.releaserc` (or `release.config.js`), add the plugin after your standar
 {
   "branches": ["main"],
   "plugins": [
+    "@gabbium/semantic-release-nuget",
     "@semantic-release/commit-analyzer",
     "@semantic-release/release-notes-generator",
     "@semantic-release/changelog",
     "@semantic-release/git",
-    "@semantic-release/github",
-    "semantic-release-nuget"
+    "@semantic-release/github"
   ]
 }
 ```
@@ -56,7 +56,7 @@ In GitHub Actions, you would set it like:
   run: npx semantic-release
   env:
     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-    NUGET_TOKEN: ${{ secrets.NUGET_TOKEN }}
+    NUGET_API_KEY: ${{ secrets.NUGET_API_KEY }}
 ```
 
 ---
@@ -104,7 +104,7 @@ jobs:
         run: npx semantic-release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          NUGET_TOKEN: ${{ secrets.NUGET_TOKEN }}
+          NUGET_API_KEY: ${{ secrets.NUGET_API_KEY }}
 ```
 
 ---
