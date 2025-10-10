@@ -1,3 +1,10 @@
+# [1.1.0](https://github.com/gabbium/semantic-release-nuget/compare/v1.0.1...v1.1.0) (2025-10-10)
+
+
+### Features
+
+* update param name ([#1](https://github.com/gabbium/semantic-release-nuget/issues/1)) ([a0f30d8](https://github.com/gabbium/semantic-release-nuget/commit/a0f30d8fc86bda15d5f1d2c98ecd202db981601c))
+
 ## [1.0.1](https://github.com/gabbium/semantic-release-nuget/compare/v1.0.0...v1.0.1) (2025-07-27)
 
 
