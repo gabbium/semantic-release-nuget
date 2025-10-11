@@ -5,13 +5,13 @@ on:
   push:
     branches: [main]
 
+concurrency:
+  group: release-${{ github.ref }}
+  cancel-in-progress: true
+  
 permissions:
   contents: write
   pull-requests: write
-
-concurrency:
-  group: release-${{ github.ref }}
-  cancel-in-progress: false
 
 jobs:
   release:
@@ -19,20 +19,20 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: 📦 Checkout | Repository
+      - name: Checkout repository
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
 
-      - name: ⚙️ Setup | Node.js
+      - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 23.x
 
-      - name: 📥 Install | Dependencies
+      - name: Install dependencies
         run: npm install
 
-      - name: 🏷️ Run semantic-release
+      - name: Run semantic-release
         run: npx semantic-release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
